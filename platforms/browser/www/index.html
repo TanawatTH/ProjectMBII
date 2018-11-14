@@ -1,0 +1,67 @@
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  
+  <script src="ejs.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+  <script src="cordova.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDBKnTfXJoRQAjOXaWyItE35Q7qPPdxl70",
+      authDomain: "shopee-69f3b.firebaseapp.com",
+      databaseURL: "https://shopee-69f3b.firebaseio.com",
+      projectId: "shopee-69f3b",
+      storageBucket: "shopee-69f3b.appspot.com",
+      messagingSenderId: "1025816911376"
+    };
+    firebase.initializeApp(config);
+    // Initialize Cloud Firestore through Firebase
+    var db = firebase.firestore();
+
+    // Disable deprecated features
+    db.settings({
+      timestampsInSnapshots: true
+    });
+
+ firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        // Send user to home.html
+        window.location.href = 'home.html';
+      } else {
+        window.location.href = 'login.html';
+        // User is signed out.
+        // Send user to login.html
+      }
+    });
+
+
+
+
+
+
+
+  </script>
+
+  <style>
+    .toolbaricon {
+      padding-left: 5px;
+      padding-bottom: 5px;
+      padding-right: 5px;
+      color: orange;
+    }
+  </style>
+</head>
+
+
+<body>
+ 
+</body>
+
+
+</html>
